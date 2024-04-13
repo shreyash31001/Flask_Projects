@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+</head>
+<body>
+    <h1>Hello World</h1>
+    {% if message %}
+    <p class="message">{{message}}</p>
+    {% endif %}
+    <div class="container">
+        <form action="/submit" method="post">
+           <label for="customer">Customer Name: </label>
+           <input type="text" name="customer">
+           <br>
+           <label for="car_data">Car Name: </label>
+           <input type="text" name="car_data">
+           <br>
+           <label for="price">Price of Car: </label>
+           <input type="number" name="price">
+           <br>
+           <label for="deal">Name of Car dealer: </label>
+           <input type="text" name="deal">
+           <br>
+           <div class="rating">
+            <h3>Rating: </h3><br>
+            <input type="radio" name="rating" value="1" />1
+            <input type="radio" name="rating" value="2" />2
+            <input type="radio" name="rating" value="3" />3
+            <input type="radio" name="rating" value="4" />4
+            <input type="radio" name="rating" value="5" />5
+           </div>
+           <br>
+           <button type="submit">Submit</button>
+        </form>
+        <!-- <h1>
+            the data is {{result}} 
+        </h1> -->
+    </div>
+</body>
+</html>
